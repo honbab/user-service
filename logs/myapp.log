@@ -1,0 +1,18 @@
+2024-10-22T23:07:37.373+09:00  INFO 2902 --- [honbab] [main] s.userservice.UserServiceApplication     : Starting UserServiceApplication using Java 17.0.12 with PID 2902 (/Users/jisu/Desktop/startspring/user-service/build/classes/java/main started by jisu in /Users/jisu/Desktop/startspring/user-service)
+2024-10-22T23:07:37.374+09:00  INFO 2902 --- [honbab] [main] s.userservice.UserServiceApplication     : The following 2 profiles are active: "prod", "common"
+2024-10-22T23:07:37.769+09:00  INFO 2902 --- [honbab] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-10-22T23:07:37.776+09:00  INFO 2902 --- [honbab] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-22T23:07:37.776+09:00  INFO 2902 --- [honbab] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-22T23:07:37.799+09:00  INFO 2902 --- [honbab] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-22T23:07:37.799+09:00  INFO 2902 --- [honbab] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 402 ms
+2024-10-22T23:07:37.985+09:00  INFO 2902 --- [honbab] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-10-22T23:07:37.992+09:00  INFO 2902 --- [honbab] [main] s.userservice.UserServiceApplication     : Started UserServiceApplication in 0.841 seconds (process running for 1.212)
+2024-10-22T23:08:32.604+09:00  INFO 2916 --- [honbab] [main] s.userservice.UserServiceApplication     : Starting UserServiceApplication using Java 17.0.12 with PID 2916 (/Users/jisu/Desktop/startspring/user-service/build/classes/java/main started by jisu in /Users/jisu/Desktop/startspring/user-service)
+2024-10-22T23:08:32.605+09:00  INFO 2916 --- [honbab] [main] s.userservice.UserServiceApplication     : The following 2 profiles are active: "prod", "common"
+2024-10-22T23:08:32.989+09:00  INFO 2916 --- [honbab] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-10-22T23:08:32.996+09:00  INFO 2916 --- [honbab] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-22T23:08:32.996+09:00  INFO 2916 --- [honbab] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-22T23:08:33.019+09:00  INFO 2916 --- [honbab] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-22T23:08:33.019+09:00  INFO 2916 --- [honbab] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 392 ms
+2024-10-22T23:08:33.187+09:00  INFO 2916 --- [honbab] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-10-22T23:08:33.193+09:00  INFO 2916 --- [honbab] [main] s.userservice.UserServiceApplication     : Started UserServiceApplication in 0.809 seconds (process running for 1.047)
