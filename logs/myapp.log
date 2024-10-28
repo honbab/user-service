@@ -1,18 +1,29 @@
-2024-10-22T23:07:37.373+09:00  INFO 2902 --- [honbab] [main] s.userservice.UserServiceApplication     : Starting UserServiceApplication using Java 17.0.12 with PID 2902 (/Users/jisu/Desktop/startspring/user-service/build/classes/java/main started by jisu in /Users/jisu/Desktop/startspring/user-service)
-2024-10-22T23:07:37.374+09:00  INFO 2902 --- [honbab] [main] s.userservice.UserServiceApplication     : The following 2 profiles are active: "prod", "common"
-2024-10-22T23:07:37.769+09:00  INFO 2902 --- [honbab] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2024-10-22T23:07:37.776+09:00  INFO 2902 --- [honbab] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-22T23:07:37.776+09:00  INFO 2902 --- [honbab] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-22T23:07:37.799+09:00  INFO 2902 --- [honbab] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-22T23:07:37.799+09:00  INFO 2902 --- [honbab] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 402 ms
-2024-10-22T23:07:37.985+09:00  INFO 2902 --- [honbab] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
-2024-10-22T23:07:37.992+09:00  INFO 2902 --- [honbab] [main] s.userservice.UserServiceApplication     : Started UserServiceApplication in 0.841 seconds (process running for 1.212)
-2024-10-22T23:08:32.604+09:00  INFO 2916 --- [honbab] [main] s.userservice.UserServiceApplication     : Starting UserServiceApplication using Java 17.0.12 with PID 2916 (/Users/jisu/Desktop/startspring/user-service/build/classes/java/main started by jisu in /Users/jisu/Desktop/startspring/user-service)
-2024-10-22T23:08:32.605+09:00  INFO 2916 --- [honbab] [main] s.userservice.UserServiceApplication     : The following 2 profiles are active: "prod", "common"
-2024-10-22T23:08:32.989+09:00  INFO 2916 --- [honbab] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2024-10-22T23:08:32.996+09:00  INFO 2916 --- [honbab] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-22T23:08:32.996+09:00  INFO 2916 --- [honbab] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-22T23:08:33.019+09:00  INFO 2916 --- [honbab] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-22T23:08:33.019+09:00  INFO 2916 --- [honbab] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 392 ms
-2024-10-22T23:08:33.187+09:00  INFO 2916 --- [honbab] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
-2024-10-22T23:08:33.193+09:00  INFO 2916 --- [honbab] [main] s.userservice.UserServiceApplication     : Started UserServiceApplication in 0.809 seconds (process running for 1.047)
+2024-10-28T21:53:32.984+09:00  INFO 2050 --- [honbab] [main] s.userservice.UserServiceApplication     : Starting UserServiceApplication using Java 17.0.12 with PID 2050 (/Users/jisu/Desktop/startspring/user-service/build/classes/java/main started by jisu in /Users/jisu/Desktop/startspring/user-service)
+2024-10-28T21:53:32.986+09:00  INFO 2050 --- [honbab] [main] s.userservice.UserServiceApplication     : The following 2 profiles are active: "prod", "common"
+2024-10-28T21:53:33.279+09:00  INFO 2050 --- [honbab] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T21:53:33.288+09:00  INFO 2050 --- [honbab] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2024-10-28T21:53:33.550+09:00  INFO 2050 --- [honbab] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-10-28T21:53:33.557+09:00  INFO 2050 --- [honbab] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T21:53:33.557+09:00  INFO 2050 --- [honbab] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-28T21:53:33.582+09:00  INFO 2050 --- [honbab] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T21:53:33.582+09:00  INFO 2050 --- [honbab] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 574 ms
+2024-10-28T21:53:33.656+09:00  INFO 2050 --- [honbab] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T21:53:33.679+09:00  INFO 2050 --- [honbab] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-28T21:53:33.696+09:00  INFO 2050 --- [honbab] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T21:53:33.855+09:00  INFO 2050 --- [honbab] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T21:53:33.872+09:00  INFO 2050 --- [honbab] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T21:53:34.050+09:00  INFO 2050 --- [honbab] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f9f8d23
+2024-10-28T21:53:34.051+09:00  INFO 2050 --- [honbab] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T21:53:34.104+09:00  WARN 2050 --- [honbab] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T21:53:34.266+09:00  INFO 2050 --- [honbab] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T21:53:34.268+09:00  INFO 2050 --- [honbab] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T21:53:34.290+09:00  WARN 2050 --- [honbab] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T21:53:34.499+09:00  WARN 2050 --- [honbab] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ff06bbf9-0118-49e3-a32f-a58d3e2c074d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-10-28T21:53:34.507+09:00  INFO 2050 --- [honbab] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-10-28T21:53:34.593+09:00  INFO 2050 --- [honbab] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-10-28T21:53:34.602+09:00  INFO 2050 --- [honbab] [main] s.userservice.UserServiceApplication     : Started UserServiceApplication in 1.837 seconds (process running for 2.316)
