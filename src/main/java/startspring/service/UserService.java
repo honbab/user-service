@@ -1,8 +1,12 @@
 package startspring.service;
 
-import startspring.dto.LoginUserDto;
-import startspring.dto.ResponseRequestDto;
+import jakarta.servlet.http.HttpServletRequest;
+import startspring.dto.LoginDto;
+import startspring.dto.response.TokenResponse;
+import startspring.service.dto.UserDto;
 
 public interface UserService {
-    ResponseRequestDto login(LoginUserDto loginUserDto);
+    TokenResponse login(LoginDto loginDto, HttpServletRequest request);
+
+    UserDto registerUser(UserDto userDto);
 }

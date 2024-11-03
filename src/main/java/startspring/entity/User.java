@@ -7,6 +7,7 @@ import startspring.entity.common.BaseEntity;
 
 @Entity
 @Getter
+@Setter(AccessLevel.PRIVATE)
 @NoArgsConstructor
 @ToString
 public class User extends BaseEntity {
@@ -15,11 +16,21 @@ public class User extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String username;
+    private String userId;
     private String password;
+    private String name;
     private String email;
     private String phone;
-    private String role;
-    private String status;
-    private String address;
+
+    public User(String userId, String password, String name, String email, String phone) {
+        this.userId = userId;
+        this.password = password;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    public void setEncodePassword(String encodedPassword) {
+        this.password = encodedPassword;
+    }
 }
