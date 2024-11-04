@@ -5,7 +5,7 @@ import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import startspring.entity.common.BaseEntity;
 
-@Entity
+@Entity(name = "users")
 @Getter
 @Setter(AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -14,7 +14,7 @@ public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String userId;
     private String password;
