@@ -2,6 +2,10 @@ package startspring.service;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import startspring.common.exceptions.BadRequestException;
@@ -11,8 +15,10 @@ import startspring.dto.request.LoginUserRequestDto;
 import startspring.dto.response.TokenResponse;
 import startspring.entity.User;
 import startspring.jwt.JwtTokenFilter;
+import startspring.jwt.JwtTokenProvider;
 import startspring.repository.UserRepository;
 import startspring.service.converter.UserConverter;
+import startspring.service.dto.TokenDto;
 import startspring.service.dto.UserDto;
 
 @Service
@@ -21,11 +27,16 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    private final JwtTokenFilter
+    private final JwtTokenProvider jwtTokenProvider;
+    private final AuthenticationManagerBuilder authenticationManagerBuilder;
 
     // 회원가입
     @Override
-    public UserDto registerUser(UserDto userDto) {
+    public UserDto signUp(UserDto userDto) {
+        // 가입 아이디 유무 확인
+        if(userRepository.existsByUserId(userDto.userId())) {
+            throw new BadRequestException("User already exists");
+        }
         // user Entity 변환
         User newUser = UserConverter.of().userDtoToUser(userDto);
         // 패스워드 암호화 처리
@@ -36,7 +47,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public TokenResponse login(LoginDto loginDto, HttpServletRequest request) {
+    public TokenDto login(LoginDto loginDto, HttpServletRequest request) {
         // 유저 확인
         User user = userRepository.findByUserId(loginDto.id()).orElseThrow(() -> new NotFoundResourceException("Not Found User"));
 
@@ -45,13 +56,12 @@ public class UserServiceImpl implements UserService {
             throw new BadRequestException("Not Matched password");
         }
 
-        // 액세스토큰 발급
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginDto.id(), loginDto.password());
+        Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
 
-        //
+        // 액세스토큰 발급 추후 리프레시토큰 추가 예정
+        TokenDto tokenDto = jwtTokenProvider.generateTokenDto(authentication);
 
-
-
-
-        return null;
+        return tokenDto;
     }
 }

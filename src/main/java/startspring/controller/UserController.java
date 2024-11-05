@@ -26,7 +26,7 @@ public class UserController {
     @PostMapping(GlobalURI.USER_ROOT)
     public ResponseEntity<RegisterResponse> register(@RequestBody RegisterUserRequestDto registerUserRequest) {
         UserDto userDto = UserDtoMapper.of().registerRequestDto(registerUserRequest);
-        UserDto savedUser = userService.registerUser(userDto);
+        UserDto savedUser = userService.signUp(userDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(UserDtoMapper.of().RegisterResponse(savedUser));
     }
 

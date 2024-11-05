@@ -1,11 +1,13 @@
 package startspring.jwt;
 
 import org.springframework.security.core.Authentication;
+import startspring.service.dto.TokenDto;
 
 public interface TokenProvider {
 
     // 액세스 토큰 생성
-    String createAccessToken(Authentication authentication);
+    //String createAccessToken(Authentication authentication);
+    TokenDto generateTokenDto(Authentication authentication);
 
     // 토큰 유효성 검사
     boolean validateToken(String token);

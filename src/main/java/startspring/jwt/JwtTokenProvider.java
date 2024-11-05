@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import org.springframework.security.core.GrantedAuthority;
+import startspring.service.dto.TokenDto;
 
 import java.security.Key;
 import java.util.Base64;
@@ -43,7 +44,7 @@ public class JwtTokenProvider implements InitializingBean, TokenProvider{
     }
 
     @Override
-    public String createAccessToken(Authentication authentication) {
+    public TokenDto generateTokenDto(Authentication authentication) {
         String authorities = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(","));
@@ -51,16 +52,19 @@ public class JwtTokenProvider implements InitializingBean, TokenProvider{
         long now = (new Date()).getTime();
         Date expireDate = new Date();
 
-        // Access Token 생성
         Date accessTokenExpiresIn = new Date(now + ACCESS_TOKEN_EXPIRE_TIME);
 
-        return Jwts.builder()
+        // Access Token 생성
+        String accessToken = Jwts.builder()
                 .setSubject(authentication.getName())
                 .setIssuedAt(expireDate)
                 .claim(AUTHORITIES_KEY, authorities)
                 .setExpiration(accessTokenExpiresIn)
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
+
+
+        return TokenDto.builder().grantType(BEARER_TYPE).accessToken(accessToken).build();
     }
 
     @Override
