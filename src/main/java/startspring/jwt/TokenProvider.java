@@ -7,7 +7,7 @@ public interface TokenProvider {
 
     // 액세스 토큰 생성
     //String createAccessToken(Authentication authentication);
-    TokenDto generateTokenDto(Authentication authentication);
+    TokenDto generateTokenDto(String userId);
 
     // 토큰 유효성 검사
     boolean validateToken(String token);

@@ -2,19 +2,13 @@ package startspring.service;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import startspring.common.exceptions.BadRequestException;
 import startspring.common.exceptions.NotFoundResourceException;
 import startspring.dto.LoginDto;
-import startspring.dto.request.LoginUserRequestDto;
-import startspring.dto.response.TokenResponse;
 import startspring.entity.User;
-import startspring.jwt.JwtTokenFilter;
 import startspring.jwt.JwtTokenProvider;
 import startspring.repository.UserRepository;
 import startspring.service.converter.UserConverter;
@@ -56,11 +50,10 @@ public class UserServiceImpl implements UserService {
             throw new BadRequestException("Not Matched password");
         }
 
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginDto.id(), loginDto.password());
-        Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
-
         // 액세스토큰 발급 추후 리프레시토큰 추가 예정
-        TokenDto tokenDto = jwtTokenProvider.generateTokenDto(authentication);
+        TokenDto tokenDto = jwtTokenProvider.generateTokenDto(user.getUserId());
+
+        // redis.save(tokenDto.getAccessToken(), tokenDto.getRefreshToken());
 
         return tokenDto;
     }
