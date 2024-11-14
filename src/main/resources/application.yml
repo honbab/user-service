@@ -1,1 +1,83 @@
-spring.application.name=user-service
+spring:
+  application:
+    name: honbab
+  profiles:
+    group:
+      "prod": "prod, common"
+      "dev": "dev, common"
+---
+spring:
+  batch:
+    jdbc:
+      initialize-schema: always
+  config:
+    activate:
+      on-profile: dev
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+  logging:
+    level:
+      org.hibernate.SQL: debug
+      org.hibernate.type: trace
+server:
+  port: 8080
+---
+spring:
+  batch:
+    jdbc:
+      initialize-schema: always
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/honbab_db
+    username: root
+    password: wltn93224/
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+#  logging:
+#    level:
+#      org.hibernate.SQL: debug
+#      org.hibernate.type: trace
+logging:
+  level:
+    root: INFO  # ?? ?? ?? ?? (INFO, DEBUG, WARN, ERROR ?)
+  file:
+    name: logs/myapp.log  # ?? ??? ??? ?? ??
+server:
+  port: 8081
+---
+jwt:
+  header: Authorization
+  #HS512 알고리즘을 사용할 것이기 때문에 512bit, 즉 64byte 이상의 secret key를 사용해야 한다.
+  #echo 'silvernine-tech-spring-boot-jwt-tutorial-secret-silvernine-tech-spring-boot-jwt-tutorial-secret' 이라는 문자열을 base64로 인코딩
+  secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK
+  token-validity-in-seconds: 86400	# 초
+
+
