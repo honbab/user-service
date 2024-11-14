@@ -40,10 +40,10 @@ public class UserController {
     }
 
     // 토큰 reissue
-    @PostMapping(GlobalURI.USER_REISSUE_TOKEN_URI) // Access token이 만료됐을때 클라이언트 (프런트 개발자)가 요청할 url : Access Token 재발급
-    public ResponseEntity<TokenResponse> reissueToken (@RequestBody TokenDto tokenDto) {
-        return ResponseEntity.ok(userService.reissue(tokenDto));
-    }
+//    @PostMapping(GlobalURI.USER_REISSUE_TOKEN_URI) // Access token이 만료됐을때 클라이언트 (프런트 개발자)가 요청할 url : Access Token 재발급
+//    public ResponseEntity<TokenResponse> reissueToken (@RequestBody TokenDto tokenDto) {
+//        return ResponseEntity.ok(userService.reissue(tokenDto));
+//    }
 
 
 }

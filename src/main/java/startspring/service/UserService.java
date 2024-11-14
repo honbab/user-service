@@ -12,5 +12,5 @@ public interface UserService {
 
     TokenDto login(LoginDto loginDto, HttpServletRequest request);
 
-    TokenResponse reissue(TokenDto tokenDto);
+//    TokenResponse reissue(TokenDto tokenDto);
 }

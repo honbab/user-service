@@ -1,6 +1,7 @@
 package startspring.jwt;
 
 import org.springframework.security.core.Authentication;
+import startspring.dto.response.TokenResponse;
 import startspring.service.dto.TokenDto;
 
 public interface TokenProvider {
@@ -21,4 +22,5 @@ public interface TokenProvider {
     // 토큰 통해 authentication 객체 가져옴
     Authentication getAuthentication(String token);
 
+    TokenResponse reissue(TokenDto tokenDto);
 }
